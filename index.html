@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> YardSale </title>
     <link rel ='stylesheet' href='css/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </html>
 
 <body>
+    <div id="myNav" class="overlay">
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        
+        <!-- Overlay content -->
+        <div class="overlay-content">
+                <a href="#">Theme</a>    
+        </div>     
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
     <section class='flex-container'>
         <div id="forcast" class="forcast">
         </div>
@@ -35,4 +47,5 @@
     </section>
     <script src="openweatherapi.js"></script>
     <script src="time.js"></script>
+    <script src="hammen.js"></script>
 </body>

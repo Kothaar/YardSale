@@ -14,7 +14,7 @@ request.onload = function () {
                 var display = document.createElement('div');
                 display.style.display = 'inline-block';
                 display.style.margin = 'auto';
-                display.innerHTML = Math.round(data.daily[x].temp.max) + " / " + Math.round(data.daily[x].temp.min);
+                display.innerHTML = "High: "+Math.round(data.daily[x].temp.max) + " / " + "Low: "+ Math.round(data.daily[x].temp.min);
                 disp.append(display);
             }
         }
