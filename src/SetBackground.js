@@ -6,10 +6,9 @@ export default function SetBackground () {
     const API = 'https://api.nasa.gov/planetary/apod?api_key=';
     const KEY = process.env.REACT_APP_NASA_KEY;
     const url = API+KEY
-    //const url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY'
     let bgimage = ' '
-    //let bgimage = 'https://apod.nasa.gov/apod/image/2103/2021_03_02_Mars_Taurus_1024px.jpg'
     let alt_text = ' '
+    console.log(url)
 
     const [apod, setImage] = useState(null)
 
@@ -18,11 +17,14 @@ export default function SetBackground () {
         .then (res => {
             setImage(res.data)
         })
+        .catch(err => {
+            console.log(err);
+        })
     }, [url])
-    if(url){
+    if(apod){
         bgimage = apod.hdurl
+        alt_text = apod.title
         //alt_text = apod.text
-        //console.log(API+KEY)
     }
     return (
         <div style = {{
