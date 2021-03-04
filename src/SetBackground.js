@@ -1,18 +1,30 @@
-import React from 'react';
-import Background from './test.png'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
-export default function SetBackground() {
-    document.body.style.backgroundImage = Background
+
+export default function SetBackground () {
+    //const API = 'https://api.nasa.gov/planetary/apod?api_key=';
+    //const KEY = 'process.env.NASA_KEY';
+    //const url = API+KEY
+    const url = ''
+    const [apod, setProduct] = useState(null)
+
+    useEffect(() => {
+        axios.get(url)
+        .then (res => {
+            setProduct(res.data)
+        })
+
+    }, [url])
+
     return (
-
-        //<div styles={{ backgroundImage:`(${Background})`}}>
-        <div style={{ 
-            backgroundImage: `url(${Background})`, backgroundSize: 'cover',
-            backgroundRepeat: "no-repeat",
+        <div style = {{
+            backgroundImage: `url(${apod.hdurl})`, backgroundSize:'cover',
+            backgroundRepeat: 'no-repeat',
             height: '100vh',
-            width: '100vw'
-          }}> 
-          <h1> Test </h1>
+            widith: '100vw'
+        }}>
         </div>
-    );
+    )
+
 }

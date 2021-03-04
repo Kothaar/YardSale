@@ -6,10 +6,10 @@ function App() {
   return (
     <>
     <GlobalStyle />
+    <SetBackground />
     <Background />
     </>
   )
 }
-    //<SetBackground />
 
 export default App;
