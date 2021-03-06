@@ -34,7 +34,7 @@ app.get("/authorize", (req,res) => {
             client_id: process.env.SPOTIFY_CLIENT_ID,
             response_type: 'code',
             redirect_uri: 'http://localhost:5000/callback',
-            //state: ' '
+            //state: 'xyz',
             scope: 'user-read-private' 
         })
     )
@@ -43,22 +43,21 @@ app.get("/authorize", (req,res) => {
 // Callback is where the clients secret gets sent in along with other requests to finish authorization
 app.get("/callback", (req,res) => {
     //header Authorization: Basic *<base64 encoded client_id:client_secret>*
-    const authKey = `Basic ${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
-    const buff = Buffer.from(authKey, 'utf-8');
-    const auth64enc = buff.toString('base64');
-    const authorizationObj = {
+    //const authKey = `Basic ${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
+    //const buff = Buffer.from(authKey, 'utf-8');
+    //const auth64enc = buff.toString('base64');
+    const body = {
         uri: 'https://accounts.spotify.com/api/token',
         form:{
             grant_type: 'authorization_code',
             code: req.query.code,
             redirect_uri: 'http://localhost:5000/callback',
-        },
-        headers: {
-            'Authorization' : authKey
+            client_id: process.env.SPOTIFY_CLIENT_ID,
+            client_secret: process.env.SPOTIFY_CLIENT_SECRET,
         },
         json: true
     }
-    request.post(authorizationObj, (error, response, body) => {
+    request.post(body, (error, response, body) => {
         var access_token = body.access_token;
         var uri = 'http://localhost:3000'
         res.redirect(uri + '?access_token=' + access_token)
