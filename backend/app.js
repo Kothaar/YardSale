@@ -2,6 +2,7 @@ const express = require("express");
 const axios = require('axios');
 const request = require('request')
 const dotenv = require("dotenv");
+const querystring = require('querystring')
 
 dotenv.config()
 
@@ -25,6 +26,45 @@ app.get("/backend", (req, res) =>{
             }
         }
     )
+});
+// https://developer.spotify.com/documentation/general/guides/authorization-guide/#client-credentials-flow
+app.get("/authorize", (req,res) => {
+    res.redirect('https://accounts.spotify.com/authorize?' +
+        querystring.stringify({
+            client_id: process.env.SPOTIFY_CLIENT_ID,
+            response_type: 'code',
+            redirect_uri: 'http://localhost:5000/callback',
+            //state: ' '
+            scope: 'user-read-private' 
+        })
+    )
+});
+
+// Callback is where the clients secret gets sent in along with other requests to finish authorization
+app.get("/callback", (req,res) => {
+    //header Authorization: Basic *<base64 encoded client_id:client_secret>*
+    const authKey = `Basic ${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
+    const buff = Buffer.from(authKey, 'utf-8');
+    const auth64enc = buff.toString('base64');
+    const authorizationObj = {
+        uri: 'https://accounts.spotify.com/api/token',
+        form:{
+            grant_type: 'authorization_code',
+            code: req.query.code,
+            redirect_uri: 'http://localhost:5000/callback',
+        },
+        headers: {
+            'Authorization' : authKey
+        },
+        json: true
+    }
+    request.post(authorizationObj, (error, response, body) => {
+        var access_token = body.access_token;
+        var uri = 'http://localhost:3000'
+        res.redirect(uri + '?access_token=' + access_token)
+        console.log(error)
+    })
+
 });
 
 app.listen(port, () => console.log(` test listen on port ${port}`));

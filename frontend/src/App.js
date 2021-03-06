@@ -5,12 +5,12 @@ import SetBackground from './SetBackground';
    // <Background />
 
 function App() {
+
   return (
     <>
     <SetBackground />
     </>
   )
-
 }
 
 
