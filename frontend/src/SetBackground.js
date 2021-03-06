@@ -7,7 +7,8 @@ export default class SetBackground extends Component {
         super();
         this.state = {
             title: "no title",
-            bgURL: ''
+            bgURL: '',
+            copyright: '',
         }
     }
 
@@ -16,7 +17,8 @@ export default class SetBackground extends Component {
             console.log(res)
             this.setState({
                 title: res.data.title,
-                bgURL: res.data.hdurl
+                bgURL: res.data.hdurl,
+                copyright: res.data.copyright,
             })
             document.body.style.backgroundImage = `url(${this.state.bgURL})`;
             document.body.style.backgroundRepeat = `no-repeat`;
@@ -29,7 +31,6 @@ export default class SetBackground extends Component {
     render() {
         return (
             <div style = {{
-                backgroundRepeat: 'no-repeat',
                 height: '100vh',
                 widith: '100vw'
             }}>
