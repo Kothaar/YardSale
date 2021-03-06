@@ -1,15 +1,13 @@
 import React from 'react';
-//import SetBackground from './SetBackground';
-import TalkToBackend from './TalkToBackend';
+import SetBackground from './SetBackground';
 //import {GlobalStyle, Background } from './styles';
     //<GlobalStyle />
-    //<Background />
-    //<SetBackground />
+   // <Background />
 
 function App() {
   return (
     <>
-    <TalkToBackend />
+    <SetBackground />
     </>
   )
 }

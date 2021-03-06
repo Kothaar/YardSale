@@ -1,40 +1,40 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import axios from 'axios';
+import React, {Component} from 'react'
 
-export default function SetBackground () {
-    const API = 'https://api.nasa.gov/planetary/apod?api_key=';
-    const KEY = process.env.REACT_APP_NASA_KEY;
-    const url = API+KEY
-    let bgimage = ' '
-    let alt_text = ' '
-    console.log(url)
 
-    const [apod, setImage] = useState(null)
-
-    useEffect(() => {
-        axios.get(url)
-        .then (res => {
-            setImage(res.data)
-        })
-        .catch(err => {
-            console.log(err);
-        })
-    }, [url])
-    if(apod){
-        bgimage = apod.hdurl
-        alt_text = apod.title
-        //alt_text = apod.text
-        document.body.style.backgroundImage = bgimage;
+export default class SetBackground extends Component {
+    constructor() {
+        super();
+        this.state = {
+            title: "no title",
+            bgURL: ''
+        }
     }
-    return (
-        <div style = {{
-            backgroundImage: `url(${bgimage})`, backgroundSize:'cover',
-            backgroundRepeat: 'no-repeat',
-            height: '100vh',
-            widith: '100vw'
-        }}>
-            {alt_text}
-        </div>
-    )
 
+    componentDidMount = () =>{
+        axios.get("/backend").then(res => {
+            console.log(res)
+            this.setState({
+                title: res.data.title,
+                bgURL: res.data.hdurl
+            })
+            document.body.style.backgroundImage = `url(${this.state.bgURL})`;
+            document.body.style.backgroundRepeat = `no-repeat`;
+            document.body.style.backgroundSize = `cover`;
+            document.body.style.backgroundPosition = `center`;
+            document.body.style.overflow = `hidden`;
+        })
+
+    };
+    render() {
+        return (
+            <div style = {{
+                backgroundRepeat: 'no-repeat',
+                height: '100vh',
+                widith: '100vw'
+            }}>
+        </div>
+        )
+    }
 }
+
