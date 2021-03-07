@@ -59,6 +59,8 @@ app.get("/callback", (req,res) => {
     }
     request.post(body, (error, response, body) => {
         var access_token = body.access_token;
+        var refresh_token = body.refresh_token;
+        var expire_time = body.expire_in
         var uri = 'http://localhost:3000'
         res.redirect(uri + '?access_token=' + access_token)
         console.log(error)
