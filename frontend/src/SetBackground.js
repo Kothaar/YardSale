@@ -30,10 +30,7 @@ export default class SetBackground extends Component {
     };
     render() {
         return (
-            <div style = {{
-                height: '100vh',
-                widith: '100vw'
-            }}>
+            <div>
         </div>
         )
     }
