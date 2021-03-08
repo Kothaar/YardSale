@@ -39,6 +39,16 @@ app.get("/authorize", (req,res) => {
         })
     )
 });
+app.get("/getforecast", (req,res) => {
+    request('https://api.openweathermap.org/data/2.5/onecall?lat=45.5051&lon=-122.6750&units=imperial&appid=' + process.env.OPEN_WEATHER_API_KEY,
+    function(error,response,data){
+        if(!error){
+            var json = JSON.parse(data);
+            res.send(json);
+        }
+    }
+    )
+});
 
 // Callback is where the clients secret gets sent in along with other requests to finish authorization
 app.get("/callback", (req,res) => {

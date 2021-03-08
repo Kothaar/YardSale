@@ -2,6 +2,7 @@ import React from 'react';
 import SetBackground from './SetBackground';
 import './App.css';
 import Clock from './clock';
+import Forecast from './weather';
 //import {GlobalStyle, Background } from './styles';
     //<GlobalStyle />
    // <Background />
@@ -12,6 +13,7 @@ function App() {
     <>
     <section className='flex-container'>
         <div id="forcast" className="forcast">
+        <Forecast/>
         </div>
         <div className = "widget1">
                 Top Left Widget 1
