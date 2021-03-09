@@ -35,8 +35,19 @@ app.get("/authorize", (req,res) => {
             response_type: 'code',
             redirect_uri: 'http://localhost:5000/callback',
             //state: 'xyz',
-            scope: 'user-read-private' 
+            scope: 
+                'user-read-private user-top-read'
         })
+    )
+});
+app.get("/getforecast", (req,res) => {
+    request('https://api.openweathermap.org/data/2.5/onecall?lat=45.5051&lon=-122.6750&units=imperial&appid=' + process.env.OPEN_WEATHER_API_KEY,
+    function(error,response,data){
+        if(!error){
+            var json = JSON.parse(data);
+            res.send(json);
+        }
+    }
     )
 });
 

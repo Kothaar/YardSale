@@ -1,3 +1,4 @@
+
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */   
     height: 100%;
@@ -12,6 +13,21 @@
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
   }
 
+  .bLubVE{
+    width: 15vw !important;
+    height: 15vw !important;
+    justify-content: center;
+    margin: auto;
+      
+  }
+  .dDLWDB{
+      height: 5%  !important;
+      width: 5% !important;;
+  }
+
+  .hQbJjo{
+      width: 36% !important;
+  }
   /* Position the content inside the overlay */
   .overlay-content {
     position: relative;
@@ -67,13 +83,15 @@
 
 }
 
+.clockbackground{
+    background-color: rgba(0,0,0, 1);
+}
 div {
 
-    background-color: antiquewhite;
+    /*background-color: rgba(255, 255, 255,0.1);*/
     justify-content: center;
 
 }
-
 .nav {
     background-color: antiquewhite;
 }
@@ -99,11 +117,11 @@ div {
     
 
 }
+.widget {
+    display: flex;
+}
 
 .widget1{
-    margin:auto;
-    height:250px;
-    width: 384px;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
@@ -111,9 +129,6 @@ div {
 
 }
 .widget2{
-    margin:auto;
-    height:250px;
-    width: 384px;
     grid-column-start: 5;
     grid-column-end: 6;
     grid-row-start: 2;
@@ -121,9 +136,6 @@ div {
 
 }
 .widget3{
-    margin:auto;
-    height:250px;
-    width: 384px;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 3;
@@ -131,9 +143,6 @@ div {
 
 }
 .widget4{
-    margin:auto;
-    height:250px;
-    width: 384px;
     grid-column-start: 5;
     grid-column-end: 6;
     grid-row-start: 3;
@@ -141,9 +150,6 @@ div {
 
 }
 .widget5{
-    margin:auto;
-    height:250px;
-    width: 384px;
     grid-column-start: 1;
     grid-column-end: 1;
     grid-row-start: 4;
@@ -151,9 +157,6 @@ div {
 
 }
 .widget6{
-    margin:auto;
-    height:250px;
-    width: 384px;
     grid-column-start: 5;
     grid-column-end: 6;
     grid-row-start: 4;
@@ -172,17 +175,22 @@ div {
     .forcast{
         order: -1;
         height:250px;
-        width: 384px;
-        margin:auto;
     }
     .clock{
         order: -1;
         height:250px;
-        width: 384px;
-        margin:auto;
     }
 
     div {
-        width: auto
+        width: auto;
+        margin-top: 0 !important;
     }
+    .timestuff{
+        justify-content: 'center';
+        margin-top: 0;
+    }
+    .widget {
+        height: 100px
+    }
+
 }
