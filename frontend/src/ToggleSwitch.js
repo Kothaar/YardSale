@@ -18,7 +18,7 @@ export default class Toggle extends Component {
       document.body.style.color = "black";
       var boxes = document.getElementsByClassName("widget");
       for(var i = 0; i< boxes.length; ++i){
-        boxes[i].style.backgroundColor = "rgba(255, 255, 255,0.2)";
+        boxes[i].style.backgroundColor = "rgba(255, 255, 255,0.4)";
         
         boxes[i].style.border = "3px solid white";
       }
@@ -28,7 +28,7 @@ export default class Toggle extends Component {
       document.body.style.color = "white";
       var divs = document.getElementsByClassName("widget");
       for(var j = 0; j< divs.length; ++j){
-        divs[j].style.backgroundColor = "rgba(0, 0, 0,0.2)";
+        divs[j].style.backgroundColor = "rgba(0, 0, 0,0.4)";
         divs[j].style.border = "3px solid black";
       }
     }

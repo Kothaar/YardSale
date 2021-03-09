@@ -28,6 +28,7 @@ export default class Forecast extends Component {
                     var icon = document.createElement('img');
                     icon.src = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png";
                     var text = document.createElement('div');
+                    text.style.fontWeight = 'bold';
                     text.innerHTML = "High: "+Math.round(res.data.daily[x].temp.max)+ "&#186;F / Low: " +Math.round(res.data.daily[x].temp.min) + "&#186;F";
                     var day;
                     if(x === 0){
