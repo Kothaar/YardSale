@@ -35,7 +35,8 @@ app.get("/authorize", (req,res) => {
             response_type: 'code',
             redirect_uri: 'http://localhost:5000/callback',
             //state: 'xyz',
-            scope: 'user-read-private' 
+            scope: 
+                'user-read-private user-top-read'
         })
     )
 });
