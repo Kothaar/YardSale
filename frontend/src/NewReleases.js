@@ -46,12 +46,14 @@ export default class NewReleases extends Component {
                 <div class='scrollable'>
                     {
                         this.state.albums.map(function(d,idx){
-                            return(
+                        return(
                                 <a key={idx} href={d.external_urls.spotify} target='blank'>
-                                   <img class='imglinks' src={d.images[2].url} alt={d.name}>
+
+                                <img class='imglinks' src={d.images[2].url} alt={d.name}>
                                 </img>
                                 </a>
-                            )})
+
+                        )})
                     }
                 </div>
             </div>
