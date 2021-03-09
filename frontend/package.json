@@ -10,6 +10,7 @@
     "axios": "^0.21.1",
     "create-react-scripts": "^0.1.6",
     "react": "^17.0.1",
+    "react-bootstrap-carousel": "^4.1.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
     "styled-components": "^5.2.1",
