@@ -1,0 +1,39 @@
+.spotify-top-artists{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.scrollable {
+    overflow-y:hidden;
+    overflow-x:scroll;
+    position:absolute;
+    white-space: nowrap;
+    object-fit: contain;
+}
+
+.imglinks {
+
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+.spotify-top-artists > h1 {
+    margin: 0;
+    justify-content: center;
+
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar
+{
+	width: 1px;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: lightgray;
+}

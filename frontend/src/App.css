@@ -69,7 +69,7 @@
 
 div {
 
-    background-color: antiquewhite;
+    background-color: rgba(250, 234, 214,.5);
     justify-content: center;
 
 }
@@ -99,11 +99,11 @@ div {
     
 
 }
+.widget {
+    display: flex;
+}
 
 .widget1{
-    margin:auto;
-    height:250px;
-    width: 384px;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
@@ -111,9 +111,6 @@ div {
 
 }
 .widget2{
-    margin:auto;
-    height:250px;
-    width: 384px;
     grid-column-start: 5;
     grid-column-end: 6;
     grid-row-start: 2;
@@ -121,9 +118,6 @@ div {
 
 }
 .widget3{
-    margin:auto;
-    height:250px;
-    width: 384px;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 3;
@@ -131,9 +125,6 @@ div {
 
 }
 .widget4{
-    margin:auto;
-    height:250px;
-    width: 384px;
     grid-column-start: 5;
     grid-column-end: 6;
     grid-row-start: 3;
@@ -141,9 +132,6 @@ div {
 
 }
 .widget5{
-    margin:auto;
-    height:250px;
-    width: 384px;
     grid-column-start: 1;
     grid-column-end: 1;
     grid-row-start: 4;
@@ -151,9 +139,6 @@ div {
 
 }
 .widget6{
-    margin:auto;
-    height:250px;
-    width: 384px;
     grid-column-start: 5;
     grid-column-end: 6;
     grid-row-start: 4;
@@ -172,17 +157,17 @@ div {
     .forcast{
         order: -1;
         height:250px;
-        width: 384px;
-        margin:auto;
     }
     .clock{
         order: -1;
         height:250px;
-        width: 384px;
-        margin:auto;
     }
 
     div {
-        width: auto
+        width: auto;
     }
+    .widget {
+        height: 100px
+    }
+
 }
