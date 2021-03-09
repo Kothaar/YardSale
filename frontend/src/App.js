@@ -3,6 +3,7 @@ import SetBackground from './SetBackground';
 import './App.css';
 import Clock from './clock';
 import TopArtists from './TopArtists'
+import NewReleases from './NewReleases'
 //import {GlobalStyle, Background } from './styles';
     //<GlobalStyle />
    // <Background />
@@ -24,10 +25,10 @@ function App() {
                 Top Right Widget 2
         </div>
         <div className = "widget widget3">
-                Mid Left Widget 3
+        <NewReleases />
         </div>
         <div className = "widget widget4">
-                <TopArtists />
+        <TopArtists />
         </div>
         <div className = "widget widget5">
                 Bot left Widget 5
