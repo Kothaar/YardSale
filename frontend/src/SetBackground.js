@@ -28,6 +28,8 @@ export default class SetBackground extends Component {
             document.body.style.backgroundSize = `cover`;
             document.body.style.backgroundPosition = `center`;
             document.body.style.overflow = `hidden`;
+            document.body.style.color = 'white';
+            document.body.style.fontFamily = 'Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif';
         })
 
     };
