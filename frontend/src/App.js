@@ -6,11 +6,14 @@ import Forecast from './weather';
 //import {GlobalStyle, Background } from './styles';
     //<GlobalStyle />
    // <Background />
+import Burger from './Burger';
 
 function App() {
 
   return (
-    <>
+<div id="outer-container">
+<Burger pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+<div id="page-wrap">
     <section className='flex-container'>
         <div id="forcast" className="forcast">
         <Forecast/>
@@ -41,7 +44,8 @@ function App() {
     <script src="openweatherapi.js"></script>
     <script src="hammen.js"></script>
     <SetBackground />
-    </>
+    </div>
+    </div>
   )
 }
 

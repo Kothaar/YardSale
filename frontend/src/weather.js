@@ -36,9 +36,10 @@ export default class Forecast extends Component {
                     else{
                         day = weekday[d.getDay()+x]
                     }
-                    var daydiv = document.createElement('div');
-                    daydiv.innerHTML = day;
-                    display.append(daydiv);
+                    var dtext = document.createElement('h2')
+                    dtext.style.margin = 'auto';
+                    dtext.innerHTML = day;
+                    display.append(dtext);
                     display.append(icon);
                     display.append(text);
                     disp.append(display);

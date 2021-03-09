@@ -1,3 +1,4 @@
+
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */   
     height: 100%;
@@ -10,6 +11,14 @@
     background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+
+  .bLubVE{
+      width: 80% !important;
+      height: 80% !important;
+      justify-content: center;
+      margin: auto;
+      
   }
 
   /* Position the content inside the overlay */
@@ -67,13 +76,15 @@
 
 }
 
+.clockbackground{
+    background-color: rgba(0,0,0, 1);
+}
 div {
 
-    background-color: rgba(255, 255, 255,0.1);
+    /*background-color: rgba(255, 255, 255,0.1);*/
     justify-content: center;
 
 }
-
 .nav {
     background-color: antiquewhite;
 }
