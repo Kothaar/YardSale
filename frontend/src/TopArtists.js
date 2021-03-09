@@ -38,11 +38,17 @@ export default class TopArtists extends Component {
     }
 
     render(){
-
+        if(!this.state.access_token){
+            var button = 
+            (<form action='http://localhost:5000/authorize'>
+                <input type='submit' value='Log Into Spotify'/>
+            </form>)
+        }
         return ( 
         <>
             <div class='spotify-top-artists'>
                 <h1>Your Top Spotify Artists</h1>
+                {button}
                 <div class='scrollable'>
                     {
                         this.state.artists.map(function(d,idx){
