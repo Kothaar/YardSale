@@ -14,13 +14,20 @@
   }
 
   .bLubVE{
-      width: 80% !important;
-      height: 80% !important;
-      justify-content: center;
-      margin: auto;
+    width: 15vw !important;
+    height: 15vw !important;
+    justify-content: center;
+    margin: auto;
       
   }
+  .dDLWDB{
+      height: 5%  !important;
+      width: 5% !important;;
+  }
 
+  .hQbJjo{
+      width: 36% !important;
+  }
   /* Position the content inside the overlay */
   .overlay-content {
     position: relative;
@@ -194,6 +201,11 @@ div {
     }
 
     div {
-        width: auto
+        width: auto;
+        margin-top: 0 !important;
+    }
+    .timestuff{
+        justify-content: 'center';
+        margin-top: 0;
     }
 }
