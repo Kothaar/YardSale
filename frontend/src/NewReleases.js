@@ -40,9 +40,8 @@ export default class NewReleases extends Component {
     render(){
         return ( 
         <>
-            <div class='spotify-new-releases'>
+            <div className='spotify-new-releases'>
                 <h1>US New Releases</h1>
-                {console.log('thereerere', this.state.albums)}
                 <div class='scrollable'>
                     {
                         this.state.albums.map(function(d,idx){

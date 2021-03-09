@@ -45,7 +45,7 @@ export default class TopArtists extends Component {
         }
         return ( 
         <>
-            <div class='spotify-top-artists'>
+            <div className='spotify-top-artists'>
                 <h1>Your Top Spotify Artists</h1>
                 {button}
                 <div class='scrollable'>

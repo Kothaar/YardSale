@@ -9,6 +9,8 @@ import NewReleases from './NewReleases'
     //<GlobalStyle />
    // <Background />
 import Burger from './Burger';
+import ImgGallery from './TopArtistGallery';
+import NewReleasesGallery from './NewReleasesGallery';
 
 function App() {
 
@@ -21,22 +23,23 @@ function App() {
         <Forecast/>
         </div>
         <div className = "widget widget1">
-                Top Left Widget 1
+                <h3> US Top Releases
+                        <NewReleasesGallery />
+                </h3>
         </div>
         <div className="clock">
-        <Clock />
+                <Clock />
         </div>
         <div className = "widget widget2">
-                Top Right Widget 2
+                <h3> Your Top Artists
+                        <ImgGallery />
+                </h3>
         </div>
         <div className = "widget widget3">
-        <NewReleases />
         </div>
         <div className = "widget widget4">
-        <TopArtists />
         </div>
         <div className = "widget widget5">
-                Bot left Widget 5
         </div>
         <div className = "widget widget6">
                 Bot Right Widget 6
