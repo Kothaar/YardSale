@@ -16,12 +16,21 @@ export default class Toggle extends Component {
     
     if(this.state.isToggleOn === false){
       document.body.style.color = "black";
-      document.body.style.backgroundColor = "black";
+      var boxes = document.getElementsByClassName("widget");
+      for(var i = 0; i< boxes.length; ++i){
+        boxes[i].style.backgroundColor = "rgba(255, 255, 255,0.2)";
+        
+        boxes[i].style.border = "3px solid white";
+      }
 
     }
     else{
       document.body.style.color = "white";
-      document.body.style.backgroundColor = "black";
+      var divs = document.getElementsByClassName("widget");
+      for(var j = 0; j< divs.length; ++j){
+        divs[j].style.backgroundColor = "rgba(0, 0, 0,0.2)";
+        divs[j].style.border = "3px solid black";
+      }
     }
     }
 

@@ -119,6 +119,8 @@ div {
 }
 .widget {
     display: flex;
+    background-color: rgba(0, 0, 0,0.1);
+    border: 3px solid black;
 }
 
 .widget1{

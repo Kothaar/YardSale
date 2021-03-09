@@ -17,28 +17,28 @@ function App() {
 <Burger pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
 <div id="page-wrap">
     <section className='flex-container'>
-        <div id="forcast" className="forcast">
+        <div id="forcast" className="widget forcast">
         <Forecast/>
         </div>
-        <div className = "widget widget1">
+        <div  className = "widget widget1">
                 Top Left Widget 1
         </div>
-        <div className="clock">
+        <div className=" widget clock">
         <Clock />
         </div>
-        <div className = "widget widget2">
+        <div  className = "widget widget2">
                 Top Right Widget 2
         </div>
-        <div className = "widget widget3">
+        <div  className = "widget widget3">
         <NewReleases />
         </div>
-        <div className = "widget widget4">
+        <div  className = "widget widget4">
         <TopArtists />
         </div>
-        <div className = "widget widget5">
+        <div  className = "widget widget5">
                 Bot left Widget 5
         </div>
-        <div className = "widget widget6">
+        <div  className = "widget widget6">
                 Bot Right Widget 6
         </div>
 
