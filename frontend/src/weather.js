@@ -5,7 +5,7 @@ import React, {Component} from 'react'
 export default class Forecast extends Component {
 
     componentDidMount = () =>{
-        axios.get("/getforecast").then(res => {
+        axios.get("https://api.kellyburton.dev/getforecast").then(res => {
             var x;
             var d = new Date();
             var weekday = new Array(7);
