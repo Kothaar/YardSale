@@ -47,9 +47,10 @@ render() {
     };
     console.log(options['baseColor'])
 return (
-    <div id = "timestuff"style = {{
+    <div className = "timestuff"style = {{
         justifyContent: 'center',
-        marginTop:'10%'    
+        width:'70%',
+        height:'70%'  
     }}>
 <AnalogClock {...options} />
 <div className="Time">

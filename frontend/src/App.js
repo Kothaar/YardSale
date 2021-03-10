@@ -3,8 +3,6 @@ import SetBackground from './SetBackground';
 import './App.css';
 import Clock from './clock';
 import Forecast from './weather';
-import TopArtists from './TopArtists'
-import NewReleases from './NewReleases'
 //import {GlobalStyle, Background } from './styles';
     //<GlobalStyle />
    // <Background />
@@ -23,7 +21,7 @@ function App() {
         <Forecast/>
         </div>
         <div className = "widget widget1">
-                <h3> US Top Releases
+                <h3 className = "spotifyCover">US Top Releases
                         <NewReleasesGallery />
                 </h3>
         </div>
@@ -31,18 +29,16 @@ function App() {
                 <Clock />
         </div>
         <div className = "widget widget2">
-                <h3> Your Top Artists
+                <h3 className = "spotifyCover">Your Top Artists
                         <ImgGallery />
                 </h3>
         </div>
-        <div className = "widget widget3">
-        </div>
-        <div className = "widget widget4">
-        </div>
+       
         <div className = "widget widget5">
+                 Add a new widget here!
         </div>
         <div  className = "widget widget6">
-                Bot Right Widget 6
+               ....or here!
         </div>
 
     </section>

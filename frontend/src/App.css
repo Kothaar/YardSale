@@ -74,7 +74,7 @@
 
 .flex-container {
     display: grid;
-    height: 91vh;
+    height: 95vh;
 
 
     grid-template-columns: repeat(5, 1fr);
@@ -117,40 +117,33 @@ div {
     
 
 }
+.spotifyCover{
+    justify-content: center;
+    width:95%;
+}
 .widget {
     display: flex;
     background-color: rgba(0, 0, 0,0.4);
     border: 3px solid black;
+    justify-content: center;
+    text-align: center;
 }
 
 .widget1{
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-end: 4;
 
 }
 .widget2{
     grid-column-start: 5;
     grid-column-end: 6;
     grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-end: 4;
 
 }
-.widget3{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 3;
-    grid-row-end: 3;
 
-}
-.widget4{
-    grid-column-start: 5;
-    grid-column-end: 6;
-    grid-row-start: 3;
-    grid-row-end: 3;
-
-}
 .widget5{
     grid-column-start: 1;
     grid-column-end: 1;
@@ -166,13 +159,34 @@ div {
 
 }
 
+.timestuff{
+    justify-content: 'center';
+   
+    margin:auto;
 
+}
 
-@media(max-width: 1152px){
+@media(max-width: 1000px){
+    .spotifyCover{
+        justify-content: center;
+        width:50%;
+    }
+    .bLubVE{
+        margin:auto;
+
+        width: 20vw !important;
+        height: 20vw !important;
+        justify-content: center;
+    }
+ 
     .flex-container {
-        display: flex;
-        flex-flow: column;
-        height: 98vh;
+        display: grid;
+        height: 95vh;
+
+
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(5, 20%);
+        gap: .2em; 
     }
     .forcast{
         order: -1;
@@ -185,14 +199,100 @@ div {
 
     div {
         width: auto;
-        margin-top: 0 !important;
-    }
-    .timestuff{
-        justify-content: 'center';
-        margin-top: 0;
-    }
-    .widget {
-        height: 100px
+        
     }
 
+    .timestuff{
+        justify-content: 'center';
+        display:inline-block;
+        margin:auto;
+
+    }
+    .widget {
+        height: 20%
+    }
+
+    /*format divs for mobile view*/
+    .forcast{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        height:auto;
+    
+    }
+    
+    .clock{
+        
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 4;
+        text-align: center;
+        display: flex;
+        height:auto;
+    
+    }
+    .widget1{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 6;
+        height:98%;
+    
+    }
+    .widget2{
+        grid-column-start: 2;
+        grid-column-end:3;
+        grid-row-start: 4;
+        grid-row-end: 6;
+        height:98%
+    }
+    
+    .widget5{
+        display:none;
+    
+    }
+    .widget6{
+        
+        display: none;
+    }
+}
+@media(max-width: 675px){
+    .bLubVE{
+
+        width: 30vw !important;
+        height: 30vw !important;
+
+    }
+}
+@media(max-width: 650px){
+    .day4{
+        display:none !important;
+    }
+}
+@media(max-width: 550px){
+    .day3{
+        display:none !important;
+    }
+    .bLubVE{
+
+        width: 40vw !important;
+        height: 40vw !important;
+
+    }
+    .spotifyCover{
+        justify-content: center;
+        width:85%;
+    }
+}
+@media(max-width: 450px){
+    .day2{
+        display:none !important;
+    }
+}
+@media(max-width: 350px){
+    .day1{
+        display:none !important;
+    }
 }
