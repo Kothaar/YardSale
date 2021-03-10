@@ -19,7 +19,7 @@ function App() {
 <Burger pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
 <div id="page-wrap">
     <section className='flex-container'>
-        <div id="forcast" className="forcast">
+        <div id="forcast" className="widget forcast">
         <Forecast/>
         </div>
         <div className = "widget widget1">
@@ -27,7 +27,7 @@ function App() {
                         <NewReleasesGallery />
                 </h3>
         </div>
-        <div className="clock">
+        <div className="widget clock">
                 <Clock />
         </div>
         <div className = "widget widget2">
@@ -41,7 +41,7 @@ function App() {
         </div>
         <div className = "widget widget5">
         </div>
-        <div className = "widget widget6">
+        <div  className = "widget widget6">
                 Bot Right Widget 6
         </div>
 

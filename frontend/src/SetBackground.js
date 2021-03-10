@@ -34,7 +34,9 @@ export default class SetBackground extends Component {
 
     };
     render() {
-        return (<div></div>)
+        return (<div style={{textAlign:"center",color:"white",backgroundColor:"black",position:"absolute",bottom:"0px",left:"0px",width:"100%"}}>
+            created by Kelly Burton and Walker Bear
+            </div>)
     }
 }
 
