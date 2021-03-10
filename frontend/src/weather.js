@@ -23,6 +23,8 @@ export default class Forecast extends Component {
                     var display = document.createElement('div');
                     display.style.display = 'inline-block';
                     display.style.margin = 'auto';
+                    display.className = 'day day'+x;
+                    display.style.textAlign='center';
                     var iconcode = res.data.daily[x].weather[0].icon
                     console.log(res.data.daily[x].weather[0].icon)
                     var icon = document.createElement('img');
