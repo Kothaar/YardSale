@@ -14,7 +14,7 @@ export default class SetBackground extends Component {
     }
 
     componentDidMount = () =>{
-        axios.get("/backend").then(res => {
+        axios.get("https://api.kellyburton.dev/backend").then(res => {
             console.log(res)
             this.setState({
                 title: res.data.title,
