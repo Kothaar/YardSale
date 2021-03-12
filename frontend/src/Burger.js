@@ -10,9 +10,7 @@ class Burger extends Component {
         <h1>Theme</h1>
       </div>
       <div>Dark Text :  <Toggle /></div>
-      <div className="menu-item">
-      </div>
-	    <form action='https://api.kellyburton.dev/authorize'>
+	    <form action='http://localhost:5000/authorize'>
       <div>Dark Text : 
 	    <input type='submit' value='Log Into Spotify' />
 	</div>
