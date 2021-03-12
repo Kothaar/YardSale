@@ -30,7 +30,7 @@ const NewReleasesGallery =() => {
 
 
     return(
-        <div class='carousel-wrapper'> 
+        <div className='carousel-wrapper'> 
         <Carousel infinateLoop useKeyboardArrows autoPlay showThumbs={false}></Carousel>
 
             <Carousel>
