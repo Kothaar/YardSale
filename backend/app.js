@@ -40,10 +40,15 @@ app.get("/authorize", (req,res) => {
         })
     )
 });
-app.get("/getforecast", (req,res) => {
-    request('https://api.openweathermap.org/data/2.5/onecall?lat=45.5051&lon=-122.6750&units=imperial&appid=' + process.env.OPEN_WEATHER_API_KEY,
+
+app.get("/getforecast/:lat/:long", (req,res) => {
+    console.log("lat"+req.params.lat)
+    console.log("long"+req.params.long)
+    console.log('https://api.openweathermap.org/data/2.5/onecall?lat='+req.params.lat+'&lon='+req.params.long+'&units=imperial&appid=' + process.env.OPEN_WEATHER_API_KEY)
+    request('https://api.openweathermap.org/data/2.5/onecall?lat='+req.params.lat+'&lon='+req.params.long+'&units=imperial&appid=' + process.env.OPEN_WEATHER_API_KEY,
     function(error,response,data){
         if(!error){
+            console.log(data);
             var json = JSON.parse(data);
             res.send(json);
         }
