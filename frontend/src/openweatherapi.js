@@ -1,4 +1,4 @@
-const url = "https://api.openweathermap.org/data/2.5/onecall?lat=45.5051&lon=-122.6750&units=imperial&appid=2dae5ca96933f1f94bb10b1be26c6491";
+const url = "https://api.openweathermap.org/data/2.5/onecall?q=2100&units=imperial&appid=2dae5ca96933f1f94bb10b1be26c6491";
 
 var request = new XMLHttpRequest();
 request.open('GET',url,true);
