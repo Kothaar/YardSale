@@ -54,6 +54,7 @@ export default class Forecast extends Component {
                         display.append(icon);
                         display.append(text);
                         disp.append(display);
+
                     }
                 }
     
