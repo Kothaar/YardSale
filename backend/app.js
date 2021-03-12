@@ -13,7 +13,7 @@ const KEY = process.env.REACT_APP_NASA_KEY;
 const url = API+KEY
 
 app.use(function(req, res, next) {
-	    res.header("Access-Control-Allow-Origin", "https://yardsale.kellyburton.dev");
+	    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
 	    res.header("Access-Control-Allow-Credentials", "true");
 	    res.header("Access-Control-Allow-Headers", "Origin,Content-Type, Authorization, x-id, Content-Length, X-Requested-With");
 	    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
@@ -22,7 +22,7 @@ app.use(function(req, res, next) {
 
 app.get("/", (req, res) => res.send("Hello World!"));
 app.get("/backend", (req, res) =>{
-	    res.header("Access-Control-Allow-Origin", "https://yardsale.kellyburton.dev");
+	    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
 	    res.header("Access-Control-Allow-Credentials", "true");
 	    res.header("Access-Control-Allow-Headers", "Origin,Content-Type, Authorization, x-id, Content-Length, X-Requested-With");
 	    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
@@ -45,7 +45,7 @@ app.get("/authorize", (req,res) => {
         querystring.stringify({
             client_id: process.env.SPOTIFY_CLIENT_ID,
             response_type: 'code',
-            redirect_uri: 'https://api.kellyburton.dev/callback',
+            redirect_uri: 'http://localhost:5000/callback',
             //state: 'xyz',
             scope: 
                 'user-read-private user-top-read'
@@ -74,7 +74,7 @@ app.get("/callback", (req,res) => {
         form:{
             grant_type: 'authorization_code',
             code: req.query.code,
-            redirect_uri: 'https://api.kellyburton.dev/callback',
+            redirect_uri: 'http://localhost:5000/callback',
             client_id: process.env.SPOTIFY_CLIENT_ID,
             client_secret: process.env.SPOTIFY_CLIENT_SECRET,
         },
@@ -82,7 +82,7 @@ app.get("/callback", (req,res) => {
     }
     request.post(body, (error, response, body) => {
         var access_token = body.access_token;
-        var uri = 'https://yardsale.kellyburton.dev';
+        var uri = 'http://localhost:3000';
         res.redirect(uri + '?access_token=' + access_token)
         console.log(error)
     })
