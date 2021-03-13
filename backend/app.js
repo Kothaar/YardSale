@@ -60,7 +60,17 @@ app.get("/getforecast/:lat/:long", (req,res) => {
     request('https://api.openweathermap.org/data/2.5/onecall?lat='+req.params.lat+'&lon='+req.params.long+'&units=imperial&appid=' + process.env.OPEN_WEATHER_API_KEY,
     function(error,response,data){
         if(!error){
-            console.log(data);
+            var json = JSON.parse(data);
+            res.send(json);
+        }
+    }
+    )
+});
+
+app.get("/cat", (req,res) => {
+    request('https://catfact.ninja/fact?max_length=140',
+    function(error,response,data){
+        if(!error){
             var json = JSON.parse(data);
             res.send(json);
         }
