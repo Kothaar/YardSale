@@ -10,6 +10,8 @@ import Burger from './Burger';
 import ImgGallery from './TopArtistGallery';
 import NewReleasesGallery from './NewReleasesGallery';
 import Player from './Player'
+import CatFacts from './CatFacts';
+
 
 function App() {
 
@@ -38,7 +40,7 @@ function App() {
         </div>
        
         <div className = "widget widget5">
-                 Add a new widget here!
+                <CatFacts/>
         </div>
         <div  className = "widget widget6">
                 <Player />
