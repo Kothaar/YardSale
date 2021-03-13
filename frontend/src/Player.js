@@ -22,15 +22,31 @@ const Player =() => {
             },
         })
         .then(PlayerRes => {
+            console.log('Player TEST', PlayerRes)
             console.log(PlayerRes.data.progress_ms)
-            setPlaying(PlayerRes.data)
+            console.log(PlayerRes.data.progress_ms)
             setTrack(PlayerRes.data.item.name)
+            setPlaying(PlayerRes.data)
             setDur(PlayerRes.data.item.duration_ms)
             setProg(PlayerRes.data.progress_ms)
         })
         .catch(error => {
             console.log(error)
         })
+        let interval = setInterval (() => {
+            let x = Math.floor((prog_ms * 100/ dur_ms)) 
+            console.log('current progress', prog_ms)
+            console.log('Percentage', x)
+            setpBar(x)
+            setProg(prog_ms + 1000)
+            if(prog_ms >= dur_ms){
+                setTrackChange(trackChange + 1)
+            }
+        }, 1000)
+
+        return () => {
+            clearInterval(interval)
+        }
         // trigger after dur_ms - prog_ms
     },[trackChange])
 

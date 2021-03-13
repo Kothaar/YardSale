@@ -17,7 +17,7 @@ const NewReleasesGallery =() => {
             },
         })
         .then(NewRes => {
-            console.log('HEREEEEE', NewRes.data)
+            console.log(NewRes.data)
             setImg(NewRes.data.albums.items)
 
         })
@@ -37,8 +37,8 @@ const NewReleasesGallery =() => {
                     {img.map((image, idx)=> 
                         <Fragment>
                             <a key={idx} href={image.external_urls.spotify} target='blank'>
-                            <img key={idx} src={image.images[1].url} alt={image.name}/>
-                            <p key={idx} className='legend'> {image.artists[0].name} - {image.name}</p>
+                            <img src={image.images[1].url} alt={image.name}/>
+                            <p className='legend'> {image.artists[0].name} - {image.name}</p>
                             </a>
                         </Fragment>
                         
