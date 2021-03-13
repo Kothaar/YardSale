@@ -39,6 +39,7 @@ const Player =() => {
             console.log('Percentage', x)
             setpBar(x)
             setProg(prog_ms + 1000)
+            console.log('new progress is s', prog_ms)
             if(prog_ms >= dur_ms){
                 setTrackChange(trackChange + 1)
             }

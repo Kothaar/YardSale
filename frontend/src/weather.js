@@ -16,6 +16,7 @@ export default class Forecast extends Component {
             axios.get('/getforecast/'+(position.coords.latitude).toFixed(4)+'/'+(position.coords.longitude).toFixed(4)).then(res => {
                 var x;
                 var d = new Date();
+                //day of the week array to dynamically get day of the week
                 var weekday = new Array(7);
                 weekday[0] = "Sunday";
                 weekday[1] = "Monday";
@@ -25,14 +26,18 @@ export default class Forecast extends Component {
                 weekday[5] = "Friday";
                 weekday[6] = "Saturday";
                 
+                //loop through the response and create a display div for each day in the forecast
                 for(x = 0; x<6;x++){
                     if(x <5){
+                        //create divs and style them
                         var disp = document.getElementById("forcast");
                         var display = document.createElement('div');
                         display.style.display = 'inline-block';
                         display.style.margin = 'auto';
                         display.className = 'day day'+x;
                         display.style.textAlign='center';
+
+                        //get the icon relating to the iconcode
                         var iconcode = res.data.daily[x].weather[0].icon
                         console.log(res.data.daily[x].weather[0].icon)
                         var icon = document.createElement('img');
@@ -50,6 +55,7 @@ export default class Forecast extends Component {
                         var dtext = document.createElement('h2')
                         dtext.style.margin = 'auto';
                         dtext.innerHTML = day;
+                        //put them all together
                         display.append(dtext);
                         display.append(icon);
                         display.append(text);
@@ -64,6 +70,7 @@ export default class Forecast extends Component {
 
     };
     render() {
+        //nothing to return because appended directly to the document
         return (
             <div>
         </div>

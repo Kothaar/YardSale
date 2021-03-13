@@ -9,6 +9,7 @@ export default class CatFacts extends Component {
         this.state ={
             fact: ""
             }
+        //set the inital fact
         axios.get("/cat").then(res => {
 
             this.setState({
@@ -18,6 +19,7 @@ export default class CatFacts extends Component {
          
     }
 
+    //set the update interval for how often to get a new fact
     componentDidMount = () =>{
         
         this.intervalID = setInterval(() =>
@@ -25,10 +27,12 @@ export default class CatFacts extends Component {
         10000
         );}
 
+    //clear the value
     componentWillUnmount(){
         clearInterval(this.intervalID)
         }
     
+    //Call the api to get a new cat fact
     updateFact(){
         axios.get("/cat").then(res => {
 
@@ -40,6 +44,7 @@ export default class CatFacts extends Component {
         }
 
     render() {
+        //return styled elements for widget title and the state which is the fact
         return <div className = "catfacts"style = {{
             justifyContent: 'center',
             width:'70%',
