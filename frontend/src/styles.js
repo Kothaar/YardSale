@@ -1,5 +1,5 @@
-import styled, {createGlobalStyle} from 'styled-components';
-import img from './test.png'
+import styled, { createGlobalStyle } from "styled-components";
+import img from "./test.png";
 
 const GlobalStyle = createGlobalStyle`
     html, body {
@@ -9,20 +9,15 @@ const GlobalStyle = createGlobalStyle`
         front-size: 16px;
         overflow: hidden;
     }
-`
+`;
 
 const Background = styled.div`
+  background-image: url(${img});
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+`;
 
-    background-image: url(${img});
-    background-position: left;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
-`
-
-
-export {
-    GlobalStyle,
-    Background
-}
+export { GlobalStyle, Background };

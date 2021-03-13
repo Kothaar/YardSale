@@ -1,44 +1,41 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class Toggle extends Component {
   constructor(props) {
     super(props);
-    this.state = {isToggleOn: false};
+    this.state = { isToggleOn: false };
 
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
+    this.setState((state) => ({
+      isToggleOn: !state.isToggleOn,
     }));
-    
-    if(this.state.isToggleOn === false){
+
+    if (this.state.isToggleOn === false) {
       document.body.style.color = "black";
       var boxes = document.getElementsByClassName("widget");
-      for(var i = 0; i< boxes.length; ++i){
+      for (var i = 0; i < boxes.length; ++i) {
         boxes[i].style.backgroundColor = "rgba(255, 255, 255,0.4)";
-        
+
         boxes[i].style.border = "3px solid white";
       }
-
-    }
-    else{
+    } else {
       document.body.style.color = "white";
       var divs = document.getElementsByClassName("widget");
-      for(var j = 0; j< divs.length; ++j){
+      for (var j = 0; j < divs.length; ++j) {
         divs[j].style.backgroundColor = "rgba(0, 0, 0,0.4)";
         divs[j].style.border = "3px solid black";
       }
     }
-    }
-
+  }
 
   render() {
     return (
       <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'ON' : 'OFF'}
+        {this.state.isToggleOn ? "ON" : "OFF"}
       </button>
     );
   }

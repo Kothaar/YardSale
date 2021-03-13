@@ -1,298 +1,273 @@
-
 .overlay {
-    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
-    height: 100%;
-    width: 0;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    background-color: rgb(0,0,0); /* Black fallback color */
-    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-  }
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0); /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
 
-  .bLubVE{
-    width: 15vw !important;
-    height: 15vw !important;
-    justify-content: center;
-    margin: auto;
-      
-  }
-  .dDLWDB{
-      height: 5%  !important;
-      width: 5% !important;;
-  }
+.bLubVE {
+  width: 15vw !important;
+  height: 15vw !important;
+  justify-content: center;
+  margin: auto;
+}
+.dDLWDB {
+  height: 5% !important;
+  width: 5% !important;
+}
 
-  .hQbJjo{
-      width: 36% !important;
-  }
-  /* Position the content inside the overlay */
-  .overlay-content {
-    position: relative;
-    top:5%; /* 5% from the top */
-    width: 100%; /* 100% width */
-    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
-    color:white;
-    text-align: center; /* Centered text/links */
-    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
-  }
-  
-  /* The navigation links inside the overlay */
+.hQbJjo {
+  width: 36% !important;
+}
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 5%; /* 5% from the top */
+  width: 100%; /* 100% width */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
+  color: white;
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
   .overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block; /* Display block instead of inline */
-    transition: 0.3s; /* Transition effects on hover (color) */
+    font-size: 20px;
   }
-  
-  /* When you mouse over the navigation links, change their color */
-  .overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
-  }
-  
-  /* Position the close button (top right corner) */
   .overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
   }
-  
-  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-  @media screen and (max-height: 450px) {
-    .overlay a {font-size: 20px}
-    .overlay .closebtn {
-      font-size: 40px;
-      top: 15px;
-      right: 35px;
-    }
-  }
+}
 
 .flex-container {
+  display: grid;
+  height: 95vh;
+
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 25%);
+  gap: 0.2em;
+}
+
+.clockbackground {
+  background-color: rgba(0, 0, 0, 1);
+}
+div {
+  /*background-color: rgba(255, 255, 255,0.1);*/
+  justify-content: center;
+}
+.nav {
+  background-color: antiquewhite;
+}
+
+.forcast {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  text-align: center;
+  display: flex;
+}
+
+.clock {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  text-align: center;
+  display: flex;
+}
+.spotifyCover {
+  justify-content: center;
+  width: 95%;
+}
+.widget {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 3px solid black;
+  justify-content: center;
+  text-align: center;
+}
+
+.widget1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+.widget2 {
+  grid-column-start: 5;
+  grid-column-end: 6;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.widget5 {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+.widget6 {
+  grid-column-start: 5;
+  grid-column-end: 6;
+  grid-row-start: 4;
+  grid-row-end: 4;
+}
+
+.timestuff {
+  justify-content: "center";
+
+  margin: auto;
+}
+
+@media (max-width: 1000px) {
+  .spotifyCover {
+    justify-content: center;
+    width: 50%;
+  }
+  .bLubVE {
+    margin: auto;
+
+    width: 20vw !important;
+    height: 20vw !important;
+    justify-content: center;
+  }
+
+  .flex-container {
     display: grid;
     height: 95vh;
 
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(5, 20%);
+    gap: 0.2em;
+  }
+  .forcast {
+    order: -1;
+    height: 250px;
+  }
+  .clock {
+    order: -1;
+    height: 250px;
+  }
 
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 25%);
-    gap: .2em; 
+  div {
+    width: auto;
+  }
 
-}
+  .timestuff {
+    justify-content: "center";
+    display: inline-block;
+    margin: auto;
+  }
+  .widget {
+    height: 20%;
+  }
 
-.clockbackground{
-    background-color: rgba(0,0,0, 1);
-}
-div {
-
-    /*background-color: rgba(255, 255, 255,0.1);*/
-    justify-content: center;
-
-}
-.nav {
-    background-color: antiquewhite;
-}
-
-.forcast{
+  /*format divs for mobile view*/
+  .forcast {
     grid-column-start: 1;
-    grid-column-end: 6;
+    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
-    text-align: center;
-    display: flex;
+    height: auto;
+  }
 
-}
-
-.clock{
-    
-    grid-column-start: 2;
-    grid-column-end: 5;
+  .clock {
+    grid-column-start: 1;
+    grid-column-end: 3;
     grid-row-start: 2;
-    grid-row-end: 5;
+    grid-row-end: 4;
     text-align: center;
     display: flex;
-    
-
-}
-.spotifyCover{
-    justify-content: center;
-    width:95%;
-}
-.widget {
-    display: flex;
-    background-color: rgba(0, 0, 0,0.4);
-    border: 3px solid black;
-    justify-content: center;
-    text-align: center;
-}
-
-.widget1{
+    height: auto;
+  }
+  .widget1 {
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 4;
-
-}
-.widget2{
-    grid-column-start: 5;
-    grid-column-end: 6;
-    grid-row-start: 2;
-    grid-row-end: 4;
-
-}
-
-.widget5{
-    grid-column-start: 1;
-    grid-column-end: 1;
     grid-row-start: 4;
-    grid-row-end: 4;
-
-}
-.widget6{
-    grid-column-start: 5;
-    grid-column-end: 6;
+    grid-row-end: 6;
+    height: 98%;
+  }
+  .widget2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
     grid-row-start: 4;
-    grid-row-end: 4;
+    grid-row-end: 6;
+    height: 98%;
+  }
 
+  .widget5 {
+    display: none;
+  }
+  .widget6 {
+    display: none;
+  }
 }
-
-.timestuff{
-    justify-content: 'center';
-   
-    margin:auto;
-
+@media (max-width: 675px) {
+  .bLubVE {
+    width: 30vw !important;
+    height: 30vw !important;
+  }
 }
-
-@media(max-width: 1000px){
-    .spotifyCover{
-        justify-content: center;
-        width:50%;
-    }
-    .bLubVE{
-        margin:auto;
-
-        width: 20vw !important;
-        height: 20vw !important;
-        justify-content: center;
-    }
- 
-    .flex-container {
-        display: grid;
-        height: 95vh;
-
-
-        grid-template-columns: repeat(2, 50%);
-        grid-template-rows: repeat(5, 20%);
-        gap: .2em; 
-    }
-    .forcast{
-        order: -1;
-        height:250px;
-    }
-    .clock{
-        order: -1;
-        height:250px;
-    }
-
-    div {
-        width: auto;
-        
-    }
-
-    .timestuff{
-        justify-content: 'center';
-        display:inline-block;
-        margin:auto;
-
-    }
-    .widget {
-        height: 20%
-    }
-
-    /*format divs for mobile view*/
-    .forcast{
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 2;
-        height:auto;
-    
-    }
-    
-    .clock{
-        
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 2;
-        grid-row-end: 4;
-        text-align: center;
-        display: flex;
-        height:auto;
-    
-    }
-    .widget1{
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 4;
-        grid-row-end: 6;
-        height:98%;
-    
-    }
-    .widget2{
-        grid-column-start: 2;
-        grid-column-end:3;
-        grid-row-start: 4;
-        grid-row-end: 6;
-        height:98%
-    }
-    
-    .widget5{
-        display:none;
-    
-    }
-    .widget6{
-        
-        display: none;
-    }
+@media (max-width: 650px) {
+  .day4 {
+    display: none !important;
+  }
 }
-@media(max-width: 675px){
-    .bLubVE{
-
-        width: 30vw !important;
-        height: 30vw !important;
-
-    }
+@media (max-width: 550px) {
+  .day3 {
+    display: none !important;
+  }
+  .bLubVE {
+    width: 40vw !important;
+    height: 40vw !important;
+  }
+  .spotifyCover {
+    justify-content: center;
+    width: 85%;
+  }
 }
-@media(max-width: 650px){
-    .day4{
-        display:none !important;
-    }
+@media (max-width: 450px) {
+  .day2 {
+    display: none !important;
+  }
 }
-@media(max-width: 550px){
-    .day3{
-        display:none !important;
-    }
-    .bLubVE{
-
-        width: 40vw !important;
-        height: 40vw !important;
-
-    }
-    .spotifyCover{
-        justify-content: center;
-        width:85%;
-    }
-}
-@media(max-width: 450px){
-    .day2{
-        display:none !important;
-    }
-}
-@media(max-width: 350px){
-    .day1{
-        display:none !important;
-    }
+@media (max-width: 350px) {
+  .day1 {
+    display: none !important;
+  }
 }
