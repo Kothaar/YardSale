@@ -9,8 +9,10 @@ import Forecast from './weather';
 import Burger from './Burger';
 import ImgGallery from './TopArtistGallery';
 import NewReleasesGallery from './NewReleasesGallery';
+import Player from './Player'
 
 function App() {
+
 
   return (
 <div id="outer-container">
@@ -21,9 +23,10 @@ function App() {
         <Forecast/>
         </div>
         <div className = "widget widget1">
-                <h3 className = "spotifyCover">US Top Releases
+                <div>
+                        <h3 className = "spotifyCover">US Top Releases</h3>
                         <NewReleasesGallery />
-                </h3>
+                </div>
         </div>
         <div className="widget clock">
                 <Clock />
@@ -38,7 +41,7 @@ function App() {
                  Add a new widget here!
         </div>
         <div  className = "widget widget6">
-               ....or here!
+                <Player />
         </div>
 
     </section>

@@ -10,9 +10,11 @@ class Burger extends Component {
         <h1>Theme</h1>
       </div>
       <div>Dark Text :  <Toggle /></div>
+      <hr />
+      <h1> Settings</h1>
 	    <form action='http://localhost:5000/authorize'>
-      <div>Dark Text : 
-	    <input type='submit' value='Log Into Spotify' />
+      <div>Log Into Spotify : 
+	    <input type='submit' value='Log In' />
 	</div>
 	    </form>
      

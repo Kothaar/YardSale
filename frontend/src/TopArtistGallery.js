@@ -34,9 +34,10 @@ const TopArtistsGallery =() => {
             <Carousel>
                     {img.map((image, idx)=> 
                         <Fragment>
+                            {console.log(image)}
                             <a key={idx} href={image.external_urls.spotify} target='blank'>
-                            <img key={idx} src={image.images[1].url} alt={image.name}/>
-                            <p key={idx} className='legend'> {image.name}</p>
+                            <img  src={image.images[1].url} alt={image.name}/>
+                            <p className='legend'> {image.name}</p>
                             </a>
                         </Fragment>
                         
