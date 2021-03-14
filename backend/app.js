@@ -48,7 +48,7 @@ app.get("/authorize", (req,res) => {
             redirect_uri: 'http://localhost:5000/callback',
             //state: 'xyz',
             scope: 
-                'user-read-private user-top-read'
+                'user-read-private user-top-read user-modify-playback-state user-read-currently-playing user-read-playback-state'
         })
     )
 });
