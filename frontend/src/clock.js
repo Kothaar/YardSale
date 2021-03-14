@@ -5,18 +5,18 @@ import AnalogClock from "analog-clock-react";
 class Clock extends Component {
   constructor(props) {
     super(props);
-    //This declared the state of time at the very beginning
+    //This creates the initial time object
     this.state = {
       time: new Date().toLocaleTimeString(),
     };
   }
 
-  //This happens when the component mount and the setInterval function get called with a call back function updateClock()
+  //This will set the update interval to update the clock every second
   componentDidMount() {
     this.intervalID = setInterval(() => this.updateClock(), 1000);
   }
 
-  //This section clears setInterval by calling intervalID so as to optimise memory
+//This section clears setInterval 
   componentWillUnmount() {
     clearInterval(this.intervalID);
   }
@@ -28,6 +28,7 @@ class Clock extends Component {
     });
   }
   render() {
+    //set the options for the analog clock that gets displayed
     let options = {
       width: "50%",
       border: true,
@@ -44,6 +45,7 @@ class Clock extends Component {
     };
     console.log(options["baseColor"]);
     return (
+      //return the formatted analog clock and the digital clock
       <div
         className='timestuff'
         style={{
@@ -58,4 +60,5 @@ class Clock extends Component {
     );
   }
 }
+//export it so that it can be called from the main app
 export default Clock;

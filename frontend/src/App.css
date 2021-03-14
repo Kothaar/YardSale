@@ -12,6 +12,7 @@
   transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
 
+ /* styling elements of the analog clock*/
 .bLubVE {
   width: 15vw !important;
   height: 15vw !important;
@@ -154,6 +155,7 @@ div {
   margin: auto;
 }
 
+/* at 1000px change the format to drop some extra widgets and reformat the grid so it isnt so cluddered*/
 @media (max-width: 1000px) {
   .spotifyCover {
     justify-content: center;
@@ -243,6 +245,7 @@ div {
     height: 30vw !important;
   }
 }
+/* resize clock and other various widgets as screen gets smaller and smaller*/
 @media (max-width: 650px) {
   .day4 {
     display: none !important;
@@ -266,6 +269,7 @@ div {
     display: none !important;
   }
 }
+/*doesnt make sense to go any smaller than this so this is last*/
 @media (max-width: 350px) {
   .day1 {
     display: none !important;
