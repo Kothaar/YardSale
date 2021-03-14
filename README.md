@@ -51,6 +51,10 @@ If running locally you will need to create a .env file in the backend folder con
 |SPOTIFY_CLIENT_SECRET=| "Your API key here"|
 |OPEN_WEATHER_API_KEY=| "Your API key here"|
 
+### Spotify API
+The Spotify API requires you register your app. This entails getting a client ID and Secret but also setting up a callback address.
+If you running this locally. `http://localhost:5000/callback` should work. This is setup within the Spotify developer settings.
+
 
 ## Usage
 
