@@ -14,7 +14,7 @@ class Burger extends Component {
         </div>
         <hr />
         <h1> Settings</h1>
-        <form action='http://localhost:5000/authorize'>
+        <form action='https://api.kellyburton.dev/authorize'>
           <div>
             Log Into Spotify :
             <input type='submit' value='Log In' />

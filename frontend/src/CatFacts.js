@@ -8,7 +8,7 @@ export default class CatFacts extends Component {
     this.state = {
       fact: "",
     };
-    axios.get("/cat").then((res) => {
+    axios.get("https://api.kellyburton.dev/cat").then((res) => {
       //set the inital fact
       this.setState({
         fact: res.data.fact,
@@ -26,7 +26,7 @@ export default class CatFacts extends Component {
   }
 
   updateFact() {
-    axios.get("/cat").then((res) => {
+    axios.get("https://api.kellyburton.dev/cat").then((res) => {
       this.setState({
         fact: res.data.fact,
       });

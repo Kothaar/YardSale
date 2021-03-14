@@ -11,9 +11,11 @@ const port = 5000;
 const API = "https://api.nasa.gov/planetary/apod?api_key=";
 const KEY = process.env.REACT_APP_NASA_KEY;
 const url = API + KEY;
+const nodeIP = 'https://api.kellyburton.dev'
+const reactIP = 'https://yardsale.kellyburton.dev'
 
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Origin", reactIP);
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
@@ -25,7 +27,7 @@ app.use(function (req, res, next) {
 
 app.get("/", (req, res) => res.send("Hello World!"));
 app.get("/backend", (req, res) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Origin", reactIP);
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
@@ -49,7 +51,7 @@ app.get("/authorize", (req, res) => {
       querystring.stringify({
         client_id: process.env.SPOTIFY_CLIENT_ID,
         response_type: "code",
-        redirect_uri: "http://localhost:5000/callback",
+        redirect_uri: nodeIP + '/callback',
         //state: 'xyz',
         scope:
           "user-read-private user-top-read user-modify-playback-state user-read-currently-playing user-read-playback-state",
@@ -107,7 +109,7 @@ app.get("/callback", (req, res) => {
     form: {
       grant_type: "authorization_code",
       code: req.query.code,
-      redirect_uri: "http://localhost:5000/callback",
+      redirect_uri: nodeIP + "/callback",
       client_id: process.env.SPOTIFY_CLIENT_ID,
       client_secret: process.env.SPOTIFY_CLIENT_SECRET,
     },
@@ -115,7 +117,7 @@ app.get("/callback", (req, res) => {
   };
   request.post(body, (error, response, body) => {
     var access_token = body.access_token;
-    var uri = "http://localhost:3000";
+    var uri = reactIP;
     res.redirect(uri + "?access_token=" + access_token);
     console.log(error);
   });

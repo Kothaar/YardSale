@@ -13,7 +13,7 @@ export default class Forecast extends Component {
       console.log("Longitude is :", long.toFixed(4));
       axios
         .get(
-          "/getforecast/" +
+          "https://api.kellyburton.dev/getforecast/" +
             position.coords.latitude.toFixed(4) +
             "/" +
             position.coords.longitude.toFixed(4)
