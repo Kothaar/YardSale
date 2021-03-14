@@ -8,6 +8,8 @@ Developed for Portland State University CS465 Winter 2021 by Kelly Burton and Wa
  * Troubleshooting
 
  ## Setup 
+ **IMPORTANT**
+ If the forecast is not being displayed make sure that you've allowed your browser location access so it can use it to get you forecast
 ### Requirements 
 
 npm install create-react-scripts: Used to run react on frontend
